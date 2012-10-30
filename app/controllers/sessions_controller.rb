@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
 
   def new
-    flash[:success] = "Inside new() of sessioncontroller"   
+   # flash[:success] = "Inside new() of sessioncontroller"   
   	render 'new'
   end
 
  def create
-    flash[:success] = "Inside create() of sessioncontroller"   
+   #  flash[:success] = "Inside create() of sessioncontroller"   
     user = User.find_by_email(params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       sign_in user
